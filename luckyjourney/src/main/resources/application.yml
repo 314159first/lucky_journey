@@ -1,0 +1,59 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://${DATASOURCE_HOST:127.0.0.1:3306}/${DATASOURCE_NAME:lucky-journey}?serverTimezone=GMT%2B8
+    username: ${DATASOURCE_USER:root}
+    password: ${DATASOURCE_PASSWORD:123456}
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 3362690944@qq.com
+    password: ajtgebgpdrrucifd
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+  rabbitmq:
+    host: ${RABBITMQ_HOST:127.0.0.1}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    connection-timeout: ${RABBITMQ_CONNECTION_TIMEOUT:1000}
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+        default-requeue-rejected: false
+
+search:
+  elasticsearch:
+    enabled: ${ELASTICSEARCH_ENABLED:true}
+    uris: ${ELASTICSEARCH_URIS:http://127.0.0.1:9201}
+    video-index: ${ELASTICSEARCH_VIDEO_INDEX:lucky_video}
+    user-index: ${ELASTICSEARCH_USER_INDEX:lucky_user}
+    connect-timeout: ${ELASTICSEARCH_CONNECT_TIMEOUT:1000}
+    socket-timeout: ${ELASTICSEARCH_SOCKET_TIMEOUT:3000}
+    rebuild-on-startup: ${ELASTICSEARCH_REBUILD_ON_STARTUP:true}
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+qiniu:
+  kodo:
+    access-key: Xfk4-Vsdd4h61lqMQ8DvOxGxwrMlmhc9xpo5-hPr
+    secret-key: cYh6Vvt-3PhDE6S4WhOGK_N3RoG_RO0nTggphKV3
+    bucket-name: tiktok110
+server:
+  port: ${SERVER_PORT:8882}
