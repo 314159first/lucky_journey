@@ -24,7 +24,7 @@
 
 ## 技术栈
 
-- Java 8
+- Java 17
 - Spring Boot 2.7.5
 - MyBatis-Plus
 - MySQL
@@ -35,7 +35,7 @@
 
 ## 运行前准备
 
-1. **JDK 8**、**Maven 3.6+**（或使用项目自带 `mvnw`）。
+1. **JDK 17**、**Maven 3.6+**（或使用项目自带 `mvnw`）。
 2. 准备基础依赖服务：
    - MySQL（默认库名：`lucky-journey`）
    - Redis
